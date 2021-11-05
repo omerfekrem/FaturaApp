@@ -1,0 +1,3 @@
+Select Satislar.alisveris_id, Satislar.satis_tarihi,Kasiyer.kasiyer_adi,Satislar.toplam_fiyat From Satislar INNER JOIN Kasiyer ON Satislar.kasiyer_id=Kasiyer.kasiyer_id 
+UNION
+Select alisveris_id, 'TOPLAM FIYAT' as satis_tarihi, 'TOPLAM FIYAT' as kasiyer_adi, sum(toplam_fiyat) as toplam_fiyat from Satislar GROUP BY alisveris_id;
